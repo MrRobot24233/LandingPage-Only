@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>background</title> 
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0f1f, #251c2b, #0a0f1f); /* تم إضافة لمسة وردية/بنفسجية خفيفة */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .bg-dots {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(rgba(255, 182, 193, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: moveDots 20s linear infinite;
+    }
+
+    @keyframes moveDots {
+        from { background-position: 0 0; }
+        to { background-position: 100px 100px; }
+    }
+
+    /* إيقاف الأنيميشن على الشاشات الصغيرة لتحسين الأداء */
+    @media (max-width: 768px) {
+        .bg-dots {
+            animation: none;
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #3a86ff, #8338ec, #ffafcc);
+        /* -webkit-background-clip: text; was added in the last step, removing it to revert */
+        /* background-clip: text; was added in the last step, removing it to revert */
+        -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+    }
+
+    a {
+        display: inline-block;
+        padding: 15px 30px;
+        background: linear-gradient(to right, #3a86ff, #8338ec);
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        background: linear-gradient(to right, #5cb0ff, #9a5eff);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(131, 56, 236, 0.5);
+    }
+</style>
+</head>
+<body>
+
+<div class="bg-dots"></div>
+
+
+</body>
+</html>
+   
